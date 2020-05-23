@@ -1,0 +1,64 @@
+x{% load static %}
+<link rel='stylesheet' href='../../static/styles.css'>
+
+{% for item in data %}
+<a href='/'><button class='buttonstyle'>Home</button></a>
+<a href='/editticket/{{item.id}}'><button class='buttonstyle'>Edit Ticket</button></a>
+<br>
+<br>
+<div id='content-ticket'>
+    <div class='areas'>
+        <h2 class='headers'>Ticket:</h2>
+        <div>{{ item.title }}</div>
+        <h4>Description:</h4>
+        <div>{{ item.description }}</div>
+        <h4>Ticket Status:</h4>
+        <div>{{ item.get_ticket_status_display }}</div>
+        <h4>Currently Assigned User:</h4>
+        <div>{{ item.assigned_user }}</div>
+        <h4>Finished User:</h4>
+        <div>{{ item.finished_user }}</div>
+        <h4>Post Time:</h4>
+        <div>{{ item.post_time }}</div>
+        <br>
+    </div>
+    <br>
+    <br>
+    <br>
+    <div class='areas'>
+
+        <div class='headers'>Change Ticket Status:</div>
+        <br>
+        <div class='formbuttons'>
+            <div class='buttonish'>
+                <form action='/changeticket/{{item.id}}/' method='post'>
+                    {% csrf_token %}
+                    <input type='hidden' value='1' name='action'>
+                    <input type="submit" value='New'>
+                </form>
+            </div>
+            <div class='buttonish'>
+                <form action='/changeticket/{{item.id}}/' method='post'>
+                    {% csrf_token %}
+                    <input type='hidden' value='2' name='action'>
+                    <input type="submit" value='In Progress'>
+                </form>
+            </div>
+            <div class='buttonish'>
+                <form action='/changeticket/{{item.id}}/' method='post'>
+                    {% csrf_token %}
+                    <input type='hidden' value='3' name='action'>
+                    <input type="submit" value='Done'>
+                </form>
+            </div>
+            <div class='buttonish'>
+                <form action='/changeticket/{{item.id}}/' method='post'>
+                    {% csrf_token %}
+                    <input type='hidden' value='4' name='action'>
+                    <input type="submit" value='Invalid'>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %}

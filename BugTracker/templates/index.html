@@ -1,0 +1,58 @@
+{% load static %}
+<html>
+<head>
+<title>Bug Tracker</title>
+<link rel="stylesheet" href="{% static 'css/style.css' %}">
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+</head>
+<body>
+<a href='addticket/'><button class='buttonstyle'>Create a Ticket</button></a>
+<a href='logout/'><button class='buttonstyle'>Logout</button></a>
+<div id='content'>
+    <br>
+    <br>
+    <div class='areas'>
+        <div class='headers'>New Tickets:</div>
+        {% for item in new %}
+        <ul>
+            <li><a href='tickets/{{item.id}}'>{{ item.title }}, {{ item.post_time }}</a></li>
+            Ticket Creator: <a href='userpage/{{item.ticket_author.id}}'>{{ item.ticket_author }}</a>
+        </ul>
+        {% endfor %}
+        <br>
+    </div>
+    <div class='areas'>
+        <div class='headers'>In Progress Tickets:</div>
+        {% for item in in_progress %}
+        <ul>
+            <div>
+                <li><a href='tickets/{{item.id}}'>{{ item.title }}, {{ item.post_time }}</a></li>
+                Currently Assigned: <a href='userpage/{{item.assigned_user.id}}'>{{item.assigned_user}}</a>
+            </div>
+        </ul>
+        {% endfor %}
+        <br>
+    </div>
+    <div class='areas'>
+        <div class='headers'>Done Tickets:</div>
+        {% for item in done %}
+        <ul>
+            <div>
+                <li><a href='tickets/{{item.id}}'>{{ item.title }}, {{ item.post_time }}</a></li>
+                User Who Finished: <a href='userpage/{{item.finished_user.id}}'>{{item.finished_user}}</a>
+            </div>
+        </ul>
+        {% endfor %}
+        <br>
+    </div>
+    <div class='areas'>
+        <div class='headers'>Invalid Tickets:</div>
+        {% for item in invalid %}
+        <ul>
+            <li><a href='tickets/{{item.id}}'>{{ item.title }}, {{ item.post_time }}</a></li>
+        </ul>
+        {% endfor %}
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,16 @@
+{% load static %}
+<link rel='stylesheet' href='../static/styles.css'>
+{% if request.user.is_active %}
+<a href='/'><button class='buttonstyle'>Home</button></a>
+{% endif %}
+<div id='content-form'>
+    <br>
+    <br>
+    <div class='areas'>
+        <form action='' method='post'>
+            {% csrf_token %}
+            {{form.as_p}}
+            <input type='submit' value='Submit'>
+        </form>
+    </div>
+</div>

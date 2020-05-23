@@ -1,0 +1,99 @@
+body {
+    font-family: 'Pacifico', cursive;
+    background: lightgoldenrodyellow;
+    background-image: url('https://media.giphy.com/media/3oFzlZeTiOo0qMm9UY/giphy.gif')
+}
+
+#content,
+#contentedit,
+#content-ticket,
+#content-form,
+#content_user {
+    margin-left: 10%;
+    margin-right: 40%;
+}
+
+
+.headers {
+    font-weight: bold;
+    color: rgb(111, 11, 11);
+}
+
+.areas {
+    border: 4px solid rgba(0, 0, 0, 0.434);
+    background: #b3cde0;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+.buttonstyle {
+    height: 35px;
+    width: 250px;
+    font-size: 22px;
+    font-weight: bolder;
+    border: 1px solid black;
+    box-shadow: 3px 4px;
+}
+
+.buttonstyle:active {
+    padding: 3px 4px 3px 6px;
+
+}
+
+.formbuttons {
+    display: flex;
+}
+
+.buttonish {
+    margin: 5px;
+}
+
+body {
+    font-family: 'Abril Fatface', cursive;
+    background: lightgoldenrodyellow;
+    background-image: url('https://media.giphy.com/media/l3q30eUNaAQO1iFpe/giphy.gif')
+}
+
+#content,
+#contentedit,
+#content-ticket,
+#content-form,
+#content_user {
+    margin-left: 10%;
+    margin-right: 40%;
+}
+
+
+.headers {
+    font-weight: bold;
+    color: rgb(111, 11, 11);
+}
+
+.areas {
+    border: 4px solid rgba(0, 0, 0, 0.434);
+    background: #b3cde0;
+    margin-bottom: 10px;
+    padding: 7px;
+}
+
+.buttonstyle {
+    height: 35px;
+    width: 250px;
+    font-size: 22px;
+    font-weight: bolder;
+    border: 1px solid black;
+    box-shadow: 3px 4px;
+}
+
+.buttonstyle:active {
+    padding: 3px 4px 3px 6px;
+
+}
+
+.formbuttons {
+    display: flex;
+}
+
+.buttonish {
+    margin: 5px;
+}

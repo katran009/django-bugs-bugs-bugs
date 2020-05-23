@@ -1,0 +1,33 @@
+{% load static %}
+<link rel='stylesheet' href='../../static/styles.css'>
+<a href='/'><button class='buttonstyle'>Home</button></a>
+<div id='content_user'>
+    <h2 class='headers'>User: {{user.username}}</h2>
+    <div class='areas'>Tickets Published:
+        {% for item in created %}
+        {% if item.ticket_author %}
+        <ul>
+            <li><a href='/tickets/{{item.id}}'>{{ item.title }}</a></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class='areas'>Tickets Assigned:
+        {% for item in assigned %}
+        {% if item.assigned_user %}
+        <ul>
+            <li><a href='/tickets/{{item.id}}'>{{ item.title }}</a></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+    <div class='areas'>Tickets Finished:
+        {% for item in finished %}
+        {% if item.finished_user %}
+        <ul>
+            <li><a href='/tickets/{{item.id}}'>{{ item.title }}</a></li>
+        </ul>
+        {% endif %}
+        {% endfor %}
+    </div>
+</div>
